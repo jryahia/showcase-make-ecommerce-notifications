@@ -1,6 +1,6 @@
 # Make E-Commerce Notifications
 
-**One endpoint that fans order notifications out to Slack, Telegram, WhatsApp and branded email, from six store platforms.**
+**One webhook endpoint that normalizes orders from six store platforms and fans notifications out to Slack, Telegram, WhatsApp and branded email. Channel delivery is mocked in this version.**
 
 > **This is a proprietary project. Source code is private. This page showcases the system's architecture and results.**
 
@@ -10,7 +10,7 @@
 
 ## Problem it solves
 
-Shops selling on several platforms get order alerts in several places, or not at all. This hub accepts orders from all of them and notifies the team on the channels they actually watch.
+Shops selling on several platforms get order alerts in several places, or not at all. This hub accepts orders from all of them and notifies the team on the channels they actually watch. It is built as the webhook backend for a Make.com scenario: the automation platform handles triggers, and this service holds the logic and data.
 
 ## Architecture
 
@@ -31,17 +31,21 @@ Shops selling on several platforms get order alerts in several places, or not at
 
 ## Tech stack
 
-![Python](https://img.shields.io/badge/Python-161b22?style=for-the-badge&labelColor=161b22&color=161b22) ![FastAPI](https://img.shields.io/badge/FastAPI-161b22?style=for-the-badge&labelColor=161b22&color=161b22) ![Make.com](https://img.shields.io/badge/Make.com-161b22?style=for-the-badge&labelColor=161b22&color=161b22) ![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-161b22?style=for-the-badge&labelColor=161b22&color=161b22) ![Slack](https://img.shields.io/badge/Slack-161b22?style=for-the-badge&labelColor=161b22&color=161b22) ![Telegram](https://img.shields.io/badge/Telegram-161b22?style=for-the-badge&labelColor=161b22&color=161b22) ![Jinja2](https://img.shields.io/badge/Jinja2-161b22?style=for-the-badge&labelColor=161b22&color=161b22)
+![Python](https://img.shields.io/badge/Python-161b22?style=for-the-badge&labelColor=161b22&color=161b22) ![FastAPI](https://img.shields.io/badge/FastAPI-161b22?style=for-the-badge&labelColor=161b22&color=161b22) ![Webhooks](https://img.shields.io/badge/Webhooks-161b22?style=for-the-badge&labelColor=161b22&color=161b22) ![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-161b22?style=for-the-badge&labelColor=161b22&color=161b22) ![Slack](https://img.shields.io/badge/Slack-161b22?style=for-the-badge&labelColor=161b22&color=161b22) ![Telegram](https://img.shields.io/badge/Telegram-161b22?style=for-the-badge&labelColor=161b22&color=161b22) ![Jinja2](https://img.shields.io/badge/Jinja2-161b22?style=for-the-badge&labelColor=161b22&color=161b22)
 
 ## What it does in practice
 
-- Gives a multi-channel seller one place for order visibility.
+- Prototype stage: order intake, normalization, timeline, logging and reprocessing are built; the channel senders are mocks with simulated failures for testing retries.
 
 ## Screenshots
 
 **Orders and revenue by platform**
 
 ![Orders and revenue by platform](assets/00-dashboard.png)
+
+**API surface: unified order webhook, notifications, exports**
+
+![API surface: unified order webhook, notifications, exports](assets/10-api.png)
 
 ---
 
