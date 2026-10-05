@@ -39,6 +39,8 @@ Shops selling on several platforms get order alerts in several places, or not at
 
 ## Screenshots
 
+> Screenshots show the app running on seeded demo data, not client data.
+
 **Orders and revenue by platform**
 
 ![Orders and revenue by platform](assets/00-dashboard.png)
